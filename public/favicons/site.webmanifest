@@ -1,0 +1,38 @@
+{
+  "theme_color": "#282828",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "name": "Henrimaris Fashion ",
+  "short_name": "Henrimaris",
+  "description": "Discover affordable and fashionable men's and women's clothing online at Henrimaris Fashion",
+  "icons": [
+    {
+      "src": "/favicons/ms-icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicons/ms-icon-150x150.png",
+      "sizes": "150x150",
+      "type": "image/png"
+    },
+    {
+      "src": "public/favicons/ms-icon-310x310.png",
+      "sizes": "310x310",
+      "type": "image/png"
+    },
+    {
+      "src": "/bg/FMS05702.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/bg/FMS05702.jpeg",
+      "sizes": "196x196",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}
