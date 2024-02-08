@@ -1,7 +1,7 @@
 import { NextComponentType, NextPageContext } from "next";
 import Router from "next/router";
 import NProgress from "nprogress";
-import { NextIntlProvider } from "next-intl";
+import { IntlProvider } from "next-intl";
 
 import { ProvideCart } from "../context/cart/CartProvider";
 import { ProvideWishlist } from "../context/wishlist/WishlistProvider";
@@ -30,7 +30,7 @@ type AppCustomProps = {
 
 const MyApp = ({ Component, pageProps }: AppCustomProps) => {
   return (
-    <NextIntlProvider messages={pageProps?.messages}>
+    <IntlProvider messages={pageProps?.messages} locale={"en-US"}>
       <ProvideAuth>
         <ProvideWishlist>
           <ProvideCart>
@@ -38,7 +38,7 @@ const MyApp = ({ Component, pageProps }: AppCustomProps) => {
           </ProvideCart>
         </ProvideWishlist>
       </ProvideAuth>
-    </NextIntlProvider>
+    </IntlProvider>
   );
 };
 
