@@ -1,6 +1,6 @@
 import { Html, Head, Main, NextScript } from "next/document";
 
-const title = "Haru Fashion";
+const title = "Henrimars Fashion";
 const desc =
   "Henrimaris Fashion e-commerce ";
 const keywords = "Henrimaris Fashion, Online Shop, E-commerce";
@@ -38,14 +38,14 @@ export default function Document() {
         <link href="/favicons/favicon.ico" rel="shortcut icon" />
         <link href="/favicons/site.webmanifest" rel="manifest" />
 
-        <meta property="og:url" content="https://haru-fashion.vercel.app" />
-        <link rel="canonical" href="https://haru-fashion.vercel.app" />
+        <meta property="og:url" content="https://henrimars-f1869a4c5c99.herokuapp.com" />
+        <link rel="canonical" href="https://henrimars-f1869a4c5c99.herokuapp.com/" />
         <meta property="og:site_name" content="Henrimaris Fashion" />
         <meta property="og:description" content={desc} key="og_description" />
         <meta property="og:title" content={title} key="og_title" />
         <meta
           property="og:image"
-          content="https://haru-fashion.vercel.app/og.png"
+          content="https://henrimars-f1869a4c5c99.herokuapp.com/og.png"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@satnaing.dev" />
@@ -57,7 +57,7 @@ export default function Document() {
         />
         <meta
           name="twitter:image"
-          content="https://haru-fashion.vercel.app/og.png"
+          content="https://henrimars-f1869a4c5c99.herokuapp.com/og.png"
         />
 
         <meta name="apple-mobile-web-app-capable" content="yes" />
