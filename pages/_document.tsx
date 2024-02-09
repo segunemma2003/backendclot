@@ -45,7 +45,7 @@ export default function Document() {
         <meta property="og:title" content={title} key="og_title" />
         <meta
           property="og:image"
-          content="https://henrimars-f1869a4c5c99.herokuapp.com/og.png"
+          content="https://henrimars-f1869a4c5c99.herokuapp.com/bg/FMS05702.jpeg"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@satnaing.dev" />
@@ -57,7 +57,7 @@ export default function Document() {
         />
         <meta
           name="twitter:image"
-          content="https://henrimars-f1869a4c5c99.herokuapp.com/og.png"
+          content="https://henrimars-f1869a4c5c99.herokuapp.com/bg/FMS05702.jpeg"
         />
 
         <meta name="apple-mobile-web-app-capable" content="yes" />
