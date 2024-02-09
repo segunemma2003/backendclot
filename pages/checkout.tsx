@@ -159,6 +159,10 @@ const ShoppingCart = () => {
     deliFee = 3000.0;
   }
 
+  useEffect(() => {
+    // Your effect code here
+}, [address, auth, clearCart, deli, email, name, password, paymentMethod, phone, products, sendEmail, shippingAddress, subtotal]);
+
   return (
     <div>
       {/* ===== Head Section ===== */}
