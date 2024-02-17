@@ -80,40 +80,53 @@ function useProvideAuth() {
   ) => {
     try {
       const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/v1/auth/register`,
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/register`,
         {
-          email,
-          fullname,
-          password,
+          "email":email,
+          "name":fullname,
+          "password":password,
           shippingAddress,
           phone,
         }
       );
-      const registerResponse = response.data;
-      const user: User = {
-        id: +registerResponse.id,
-        email,
-        fullname,
-        shippingAddress,
-        phone,
-        token: registerResponse.token,
-      };
-      setUser(user);
-      return {
-        success: true,
-        message: "register_successful",
-      };
-    } catch (err) {
-      const errResponse = (err as any).response.data;
-      let errorMessage: string;
-      if (errResponse.error.type === "alreadyExists") {
-        errorMessage = errResponse.error.type;
-      } else {
-        errorMessage = errResponse.error.detail.message;
-      }
+
+      if(response.data['message'] == "User created successfully"){
+        const registerResponse = response.data["user"];
+        const user: User = {
+          id: +registerResponse.id,
+          email,
+          fullname,
+          shippingAddress,
+          phone,
+          token: registerResponse.token,
+        };
+        setUser(user);
+        return {
+          success: true,
+          message: "register_successful",
+        };
+    }else{
       return {
         success: false,
-        message: errorMessage,
+        message: "email already exists",
+      };
+      // const errResponse = response.data;
+    }
+    } catch (err) {
+      // const errResponse = (err as any).response.data;
+      // let errorMessage: string;
+      // if (errResponse.error.type === "alreadyExists") {
+      //   errorMessage = errResponse.error.type;
+      // } else {
+      //   errorMessage = errResponse.error.detail.message;
+      // }
+      // return {
+      //   success: false,
+      //   message: errorMessage,
+      // };
+      return {
+        success: false,
+        message: "email already exists",
       };
     }
   };
@@ -121,7 +134,7 @@ function useProvideAuth() {
   const login = async (email: string, password: string) => {
     try {
       const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/v1/auth/login`,
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/login`,
         {
           email,
           password,
@@ -129,12 +142,12 @@ function useProvideAuth() {
       );
       const loginResponse = response.data;
       const user: User = {
-        id: +loginResponse.data.id,
+        id: +loginResponse.data["user"]["id"],
         email,
-        fullname: loginResponse.data.fullname,
-        phone: loginResponse.data.phone,
-        shippingAddress: loginResponse.data.shippingAddress,
-        token: loginResponse.token,
+        fullname: loginResponse.data["user"]["name"],
+        phone: loginResponse.data["user"]["phone"],
+        shippingAddress: loginResponse.data["shippingAddress"],
+        token: loginResponse["authorization"]["token"],
       };
       setUser(user);
       return {
